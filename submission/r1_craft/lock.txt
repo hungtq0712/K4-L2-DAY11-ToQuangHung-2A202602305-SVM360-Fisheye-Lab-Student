@@ -1,0 +1,9 @@
+round: r1_craft
+slice: B4-dense
+sha256: 950a246323ae2d5967a25c71de8ebfbbb1992779ddeea4264b22e259ecd786cc
+code: 950A-2463
+locked_at: 2026-09-29T03:37:36+07:00
+shapes: box=22, polygon=13
+prefill_kept: 3
+prefill_edited: 0
+new: 19

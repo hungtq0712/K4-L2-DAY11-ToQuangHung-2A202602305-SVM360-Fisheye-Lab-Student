@@ -1,0 +1,36 @@
+round,slice,frame,object_ref,cell,what,why,severity,owner,rule_id,evidence,action,rules_version,note
+calib,C0,adasind_019560.jpg,L4,center,SPURIOUS,Tách riêng người lái xe thành nhãn Pedestrian (người đi bộ) là sai quy tắc.,High,annotator,R_Class_Merge,File compare.md báo L4 SPURIOUS; nhãn chuẩn R2 gộp cả người và xe.,Xóa khung L4 và gộp chung người vào khung L3 (Bike).,v1,Quy tắc: Người đang đi xe máy/xe đạp thì gộp chung vào nhãn Bike.
+calib,C0,adasind_019560.jpg,L7+R3,edge,WRONG_CLASS,Nhìn nhầm xe ba gác thành xe tải do ảnh ở viền camera bị méo.,High,annotator,R_Class_Def,File compare.md báo L7+R3 WRONG_CLASS; nhãn chuẩn R3 là ThreeWheeler.,Sửa nhãn L7 từ Truck thành ThreeWheeler.,v1,Chú ý quan sát kỹ các xe ở vùng sát mép ảnh.
+calib,C0,adasind_019560.jpg,L3,center,BAD_BBOX,Khung vẽ xe đạp/xe máy bị thiếu mất phần trên của người lái.,Medium,annotator,R_BBox,Tọa độ ytl=779 thấp hơn so với chuẩn R2 ytl=736 (thiếu 43 pixel).,Kéo rộng khung L3 lên phía trên để bao trọn cả người lái.,v1,Khung vẽ phải ôm trọn cả người lẫn xe.
+r2_qa,B4-dense,adasind_258420.jpg,L7+L8,L_only,OVERLAP_BBOX,Quan sát qa_overlay.html: L7 và L8 đè trùng vị trí xe.,Medium,qa,R_Overlap_Merge,File qa_overlay.html có 2 box đè lên nhau.,Rà soát xóa/gộp box trùng L8.,v1,QA phát hiện đè box.
+r2_qa,B4-dense,adasind_270517.jpg,L2,L_only,EDGE_ATTR,Quan sát qa_overlay.html: L2 ở góc x>1000 mép ảnh.,Low,qa,R_Edge_Zone,File qa_overlay.html ghi nhận nhãn ở viền.,Bật thuộc tính edge_zone và truncated.,v1,QA phát hiện thiếu thuộc tính mép ảnh.
+r2_qa,B4-dense,adasind_270517.jpg,L3,L_only,BBOX_FIT,Quan sát qa_overlay.html: L3 bao viền xe ba gác trung tâm.,Medium,qa,R_BBox_Geometry,File qa_overlay.html ghi nhận bbox chưa ôm sát.,Hiệu chỉnh viền bbox sát mép xe.,v1,QA rà soát lại kích thước bbox.
+r2_qa,B4-dense,adasind_310008.jpg,L4+L5,L_only,DUPLICATE_BBOX,Quan sát qa_overlay.html: L4 và L5 đè chồng gần như hoàn toàn.,High,qa,R_Duplicate_BBox,File qa_overlay.html ghi nhận 2 box đè chồng.,Xóa bớt 1 box Pedestrian trùng lặp.,v1,QA phát hiện khung trùng lặp.
+r1_craft,B4-dense,adasind_258420.jpg,L3+R5,na,BOX_GEOMETRY,Khung L3 bị lệch tọa độ so với R5.,Medium,annotator,R_BBox,File compare.md ghi nhận lệch IoU.,Hiệu chỉnh tọa độ khung L3.,v1,Lệch IoU.
+r1_craft,B4-dense,adasind_258420.jpg,L8,na,SPURIOUS,Vẽ thừa nhãn L8 không có trong Reference.,Medium,annotator,R_Spurious,File compare.md ghi nhận L8 thừa.,Xóa khung L8.,v1,Nhãn thừa.
+r1_craft,B4-dense,adasind_258420.jpg,L9,na,SPURIOUS,Vẽ thừa nhãn L9 không có trong Reference.,Medium,annotator,R_Spurious,File compare.md ghi nhận L9 thừa.,Xóa khung L9.,v1,Nhãn thừa.
+r3_diag,B4-dense,adasind_258420.jpg,L1+R4,LR_noM,MISSING,Model trượt đối tượng Car ở trung tâm.,Medium,ai_team,E2_model_miss,File model_compare.md ghi nhận LR_noM.,no_action,v1,Model bỏ sót.
+r3_diag,B4-dense,adasind_258420.jpg,L10+R1,LR_noM,MISSING,Model trượt đối tượng ở viền ảnh.,Medium,ai_team,E2_model_miss,File model_compare.md ghi nhận LR_noM.,no_action,v1,Model bỏ sót.
+r3_diag,B4-dense,adasind_258420.jpg,L4+R8,LR_noM,MISSING,Model trượt đối tượng ở trung tâm.,Medium,ai_team,E2_model_miss,File model_compare.md ghi nhận LR_noM.,no_action,v1,Model bỏ sót.
+r3_diag,B4-dense,adasind_258420.jpg,L6+R3,LR_noM,MISSING,Model trượt đối tượng ở vùng mid.,Medium,ai_team,E2_model_miss,File model_compare.md ghi nhận LR_noM.,no_action,v1,Model bỏ sót.
+r3_diag,B4-dense,adasind_258420.jpg,L3+M6,LM_noR,SPURIOUS,Reference R bỏ sót ô tô Car mà cả L và M đều nhận diện rõ.,High,data_ops,E0_reference_defect,File model_compare.md ghi nhận LM_noR (mid).,escalate,v1,Phát hiện lỗi Reference R thiếu box.
+r3_diag,B4-dense,adasind_258420.jpg,L8,L_only,SPURIOUS,Annotator L vẽ thừa nhãn L8.,Medium,annotator,R_Spurious,File model_compare.md ghi nhận L_only.,delete_label,v1,Lỗi người gán nhãn.
+r3_diag,B4-dense,adasind_258420.jpg,L9+M7,LM_noR,SPURIOUS,Cả L và M đều vẽ nhầm bóng râm thành đối tượng.,Medium,ai_team,E2_model_fp,File model_compare.md ghi nhận LM_noR.,no_action,v1,Model và L cùng báo giả.
+r3_diag,B4-dense,adasind_258420.jpg,R5,R_only,MISSING,Cả L và M đều bỏ sót đối tượng R5.,Medium,annotator,R_Missing,File model_compare.md ghi nhận R_only.,add_label,v1,L và M cùng bỏ sót.
+r3_diag,B4-dense,adasind_258420.jpg,M3,M_only,SPURIOUS,Model báo động giả vật thể ở vùng mid.,Low,ai_team,E2_model_fp,File model_compare.md ghi nhận M_only.,no_action,v1,Model báo động giả.
+r3_diag,B4-dense,adasind_258420.jpg,M4,M_only,SPURIOUS,Model báo động giả ở viền ảnh.,Low,ai_team,E2_model_fp,File model_compare.md ghi nhận M_only.,no_action,v1,Model báo động giả.
+r3_diag,B4-dense,adasind_258420.jpg,M5,M_only,SPURIOUS,Model báo động giả ở vùng mid.,Low,ai_team,E2_model_fp,File model_compare.md ghi nhận M_only.,no_action,v1,Model báo động giả.
+r3_diag,B4-dense,adasind_258420.jpg,M8,M_only,SPURIOUS,Model báo động giả ở trung tâm.,Low,ai_team,E2_model_fp,File model_compare.md ghi nhận M_only.,no_action,v1,Model báo động giả.
+r3_diag,B4-dense,adasind_258420.jpg,M10,M_only,SPURIOUS,Model báo động giả ở vùng mid.,Low,ai_team,E2_model_fp,File model_compare.md ghi nhận M_only.,no_action,v1,Model báo động giả.
+r3_diag,B4-dense,adasind_258420.jpg,M11,M_only,SPURIOUS,Model báo động giả ở trung tâm.,Low,ai_team,E2_model_fp,File model_compare.md ghi nhận M_only.,no_action,v1,Model báo động giả.
+r3_diag,B4-dense,adasind_270517.jpg,L5+R4,LR_noM,MISSING,Model trượt đối tượng ở trung tâm.,Medium,ai_team,E2_model_miss,File model_compare.md ghi nhận LR_noM.,no_action,v1,Model bỏ sót.
+r3_diag,B4-dense,adasind_270517.jpg,L3+R2,LR_noM,MISSING,Model trượt đối tượng ở trung tâm.,Medium,ai_team,E2_model_miss,File model_compare.md ghi nhận LR_noM.,no_action,v1,Model bỏ sót.
+r3_diag,B4-dense,adasind_270517.jpg,M5,M_only,SPURIOUS,Model báo động giả ở vùng mid.,Low,ai_team,E2_model_fp,File model_compare.md ghi nhận M_only.,no_action,v1,Model báo động giả.
+r3_diag,B4-dense,adasind_270517.jpg,M6,M_only,SPURIOUS,Model báo động giả ở trung tâm.,Low,ai_team,E2_model_fp,File model_compare.md ghi nhận M_only.,no_action,v1,Model báo động giả.
+r3_diag,B4-dense,adasind_270517.jpg,M7,M_only,SPURIOUS,Model báo động giả ở trung tâm.,Low,ai_team,E2_model_fp,File model_compare.md ghi nhận M_only.,no_action,v1,Model báo động giả.
+r3_diag,B4-dense,adasind_270517.jpg,M9,M_only,SPURIOUS,Model báo động giả vạch đường.,Low,ai_team,E2_model_fp,File model_compare.md ghi nhận M_only.,no_action,v1,Model báo động giả.
+r3_diag,B4-dense,adasind_270517.jpg,M10,M_only,SPURIOUS,Model báo động giả nhiễu ảnh.,Low,ai_team,E2_model_fp,File model_compare.md ghi nhận M_only.,no_action,v1,Model báo động giả.
+r3_diag,B4-dense,adasind_270517.jpg,M11,M_only,SPURIOUS,Model báo động giả nhiễu ảnh.,Low,ai_team,E2_model_fp,File model_compare.md ghi nhận M_only.,no_action,v1,Model báo động giả.
+r3_diag,B4-dense,adasind_310008.jpg,L1+R1,LR_noM,MISSING,Model trượt ThreeWheeler L1+R1.,Medium,ai_team,E2_model_miss,File model_compare.md ghi nhận LR_noM.,no_action,v1,Model bỏ sót.
+r3_diag,B4-dense,adasind_310008.jpg,M6,M_only,SPURIOUS,Model nhận diện nhầm vật thể bên đường.,Low,ai_team,E2_model_fp,File model_compare.md ghi nhận M_only.,no_action,v1,Model báo động giả.
+r3_diag,B4-dense,adasind_310008.jpg,M7,M_only,SPURIOUS,Model nhận diện nhầm vật thể bên đường.,Low,ai_team,E2_model_fp,File model_compare.md ghi nhận M_only.,no_action,v1,Model báo động giả.

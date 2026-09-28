@@ -1,0 +1,9 @@
+camera_id,slice_type,frames,risk,rationale
+front,normal,25,trung bình,Lấy mẫu các cảnh nhìn phía trước trong điều kiện bình thường
+front,hard,25,cao,Lấy các cảnh khó như che khuất, vật thể sát mép ảnh hoặc gần vùng tiếp giáp giữa hai camera.
+rear,normal,25,trung bình,Lấy mẫu các cảnh nhìn phía sau trong điều kiện bình thường
+rear,hard,25,cao,Lấy các cảnh khó như che khuất, vật thể sát mép ảnh hoặc gần vùng tiếp giáp giữa hai camera.
+left,normal,25,trung bình,Lấy mẫu các cảnh từ camera bên trái trong điều kiện bình thường
+left,hard,25,cao,Lấy các cảnh khó như vùng overlap, che khuất hoặc vật thể gần vùng tiếp giáp giữa hai camera.
+right,normal,25,trung bình,Lấy mẫu các cảnh từ camera bên phải trong điều kiện bình thường
+right,hard,25,cao,Lấy các cảnh khó như vùng overlap, che khuất hoặc vật thể gần vùng tiếp giáp giữa hai camera.s
